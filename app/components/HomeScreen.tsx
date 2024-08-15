@@ -81,23 +81,23 @@ const HomeScreen = () => {
         <div className='flex justify-center pt-[25vh]'>
         <button className='btn' onClick={()=>  get4RandomPhotos(data)}>Get Photos</button>
 
-        <dialog id="my_modal_5" className="rounded-lg">
+        <dialog id="my_modal_5" className="rounded-lg overflow-x-scroll  w-[90vw] h-[60vh] lg:h-[80vh]">
 
-  <div className=" w-[90vw] h-[80vh]">
-  <div>
+  <div className=" ">
+  <div className='overflow-x-scroll'>
   <div className='py-4'> <p className='underline text-right mx-2 cursor-pointer' onClick={closeModal}>Close</p></div>
   {!activeItem && <div><h3 className='text-center text-2xl font-bold py-4'>Please Pick A Photo</h3></div>}
-  <div className='flex justify-center'>
-    <div className='flex flex-col lg:flex-row gap-3'>
+  <div className=''>
+    <div className='flex gap-1 lg:gap-3 w-full justify-center overflow-x-scroll'>
 
     {randomPhotos && randomPhotos.map((photo:ImageType) => (
       
 
 
-        <div key={photo.id} >
-        <span onClick={()=>handleName(photo)} className='cursor-pointer' >
+        <div key={photo.id} className='h-[10rem] w-[8rem] lg:h-[25rem] lg:w-[20rem]' >
+        <span onClick={()=>handleName(photo)} className='cursor-pointer  w-[20rem]' >
         
-            <Image className={`h-[15rem] w-[10rem] ${ activeItem && activeItem.id === photo.id && 'border-[0.2rem] border-blue-800 rounded-md' }`}  src={photo.urls.regular} alt={photo.alt_description} height={500} width={400}/>
+            <Image className={`h-[10rem] w-[8rem] lg:h-[25rem] lg:w-[20rem] ${ activeItem && activeItem.id === photo.id && 'border-[0.2rem] border-blue-800 rounded-md' }`}  src={photo.urls.regular} alt={photo.alt_description} height={500} width={400}/>
            
             </span>
         </div>
@@ -105,7 +105,7 @@ const HomeScreen = () => {
     </div>
     </div>
     <div className='flex justify-center my-8'>
-    {activeItem && <input className='border rounded-md' value={name} onChange={(e:any) => setname(e.target.value)} autoFocus/>}
+    {activeItem && <input className='border rounded-md w-[60vw] lg:w-[20vw] p-2' placeholder='Enter Nick Name 😊' value={name} onChange={(e:any) => setname(e.target.value)} autoFocus/>}
     </div>
 
     <div className='flex justify-center'>

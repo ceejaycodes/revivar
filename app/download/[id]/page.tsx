@@ -82,15 +82,17 @@ const page =  ({searchParams}: SearchParamTypes) => {
       <div className='my-5 ml-4 underline'><Link href={'/'}><h3>Go Back</h3></Link></div>
       <div className='w-screen flex justify-center mt-[20vh]'>
         <div>
-      <div className='w-[10rem] h-[15rem]' ref={ref}>
-      <Image className={`h-[15rem] w-[10rem] rounded-md `}  src={searchParams.urls} alt={searchParams.alt_description} height={500} width={400}/>
+          <div className='w-screen flex justify-center '>
+      <div className='w-[12rem] h-[15rem]' ref={ref}>
+      <Image className={`h-[15rem] w-[12rem] rounded-md `}  src={searchParams.urls} alt={searchParams.alt_description} height={500} width={400}/>
       <h1 className={` ${Mate.className} relative bottom-[30vh] ml-4 text-white text-2xl text-center`}>Thank You</h1>
 
       <h1 className={` ${Mate.className} relative bottom-14 text-center text-white`}>{searchParams.name}</h1>
 
       </div>
+      </div>
 
-      <div className='flex gap-4 justify-center relative right-[12vw] my-20'>
+      <div className='flex gap-4 justify-center relative  my-20 flex-col lg:flex-row'>
         <button className='btn' onClick={()=> HandleDownload('png')}>Download As PNG</button>
         <button className='btn' onClick={()=> HandleDownload('jpeg')}>Download as JPEG</button>
         <button className='btn' onClick={()=> HandleDownload('svg')}>Download as SVG</button>
