@@ -96,6 +96,8 @@ const HomeScreen = () => {
 
         <div key={photo.id} className='h-[10rem] w-[8rem] lg:h-[25rem] lg:w-[20rem]' >
         <span onClick={()=>handleName(photo)} className='cursor-pointer  w-[20rem]' >
+            {isLoading && <><h1 className='font-bold'>Loading Photos...</h1></>}
+            {isError && <><h1 className='font-bold'>Unable To Fetch Photos, try again</h1></>}
         
             <Image className={`h-[10rem] w-[8rem] lg:h-[25rem] lg:w-[20rem] ${ activeItem && activeItem.id === photo.id && 'border-[0.2rem] border-blue-800 rounded-md' }`}  src={photo.urls.regular} alt={photo.alt_description} height={500} width={400}/>
            
